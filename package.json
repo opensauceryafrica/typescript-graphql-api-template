@@ -1,5 +1,5 @@
 {
-    "name": "accountableuserservice",
+    "name": "typescript-graphql-api-templateuserservice",
     "version": "1.0.0",
     "description": "Accounting for the everyday human.",
     "main": "index.js",

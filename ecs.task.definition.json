@@ -1,11 +1,11 @@
 {
-    "family": "accountableuserservice",
+    "family": "typescript-graphql-api-templateuserservice",
     "executionRoleArn": "arn:aws:iam::677602393757:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "accountableuserservice",
-            "image": "677602393757.dkr.ecr.eu-north-1.amazonaws.com/accountableuserservice:latest",
+            "name": "typescript-graphql-api-templateuserservice",
+            "image": "677602393757.dkr.ecr.eu-north-1.amazonaws.com/typescript-graphql-api-templateuserservice:latest",
             "portMappings": [
                 {
                     "containerPort": 8002,

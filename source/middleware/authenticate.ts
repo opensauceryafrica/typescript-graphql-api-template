@@ -11,7 +11,7 @@ import { GraphError } from '../types/misc/graphql';
 export default async (req: Request): Promise<IContext | GraphError> => {
     const ip = (req.headers['x-forwarded-for'] || req.connection.remoteAddress) as string;
 
-    const referer = (req.headers['x-accountable-dev'] as string) || req.headers.referer || '';
+    const referer = (req.headers['x-typescript-graphql-api-template-dev'] as string) || req.headers.referer || '';
 
     const domain = req.protocol + '://' + req.get('host');
 

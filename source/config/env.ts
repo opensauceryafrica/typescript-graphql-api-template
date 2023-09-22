@@ -4,14 +4,14 @@ config();
 const os = Object.assign({}, process.env);
 
 export default {
-    name: os.APP_NAME || 'Accountable',
+    name: os.APP_NAME || 'typescript-graphql-api-template',
     logo: process.env.APP_LOGO || '',
     domain: {
         user: {
             api: os.APP_DOMAIN_API || 'http://localhost:3000',
             web: {
                 dev: os.APP_DOMAIN_WEB_DEV || 'http://localhost:3000',
-                stage: os.APP_DOMAIN_WEB_STAGE || 'https://accountable-frontend-zeta.vercel.app',
+                stage: os.APP_DOMAIN_WEB_STAGE || 'https://typescript-graphql-api-template-frontend-zeta.vercel.app',
             },
         },
     },
@@ -36,8 +36,8 @@ export default {
         mongodb: {
             host: os.DB_HOST || 'localhost',
             port: Number(os.DB_PORT) || 27017,
-            name: os.DB_NAME || 'accountable',
-            user: os.DB_USER || 'accountable',
+            name: os.DB_NAME || 'typescript-graphql-api-template',
+            user: os.DB_USER || 'typescript-graphql-api-template',
             password: os.DB_PASSWORD || 'password',
             uri: `mongodb+srv://${os.DB_USER}:${os.DB_PASSWORD}@${os.DB_HOST}/${os.DB_NAME}?retryWrites=true&authSource=admin`,
         },
@@ -75,8 +75,8 @@ export default {
             user: os.MAIL_USER || 'user',
             pass: os.MAIL_PASSWORD || 'password',
         },
-        from: os.MAIL_FROM || 'support@accountable.com',
-        name: os.MAIL_NAME || 'Accountable',
+        from: os.MAIL_FROM || 'support@typescript-graphql-api-template.com',
+        name: os.MAIL_NAME || 'typescript-graphql-api-template',
         template: {
             passwordReset: {
                 subject: `Let's recover your password`,
