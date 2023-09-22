@@ -13,7 +13,7 @@ beforeAll(async () => {
     const frame = await buildGraphQLServer(express());
     lifecycle.graphql = frame.gql;
 
-    await mongodb.establishConnection();
+    await mongodb.openConnection();
 });
 
 afterAll(async () => {
