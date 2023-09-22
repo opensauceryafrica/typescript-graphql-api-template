@@ -18,7 +18,7 @@ const user = {
 describe('authenticate', () => {
     beforeEach(async () => {
         jest.setTimeout(1000 * 25);
-        await mongodb.establishConnection();
+        await mongodb.openConnection();
     });
 
     afterEach(async () => {
