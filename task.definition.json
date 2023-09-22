@@ -1,0 +1,50 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-north-1:677602393757:task-definition/accountableuserservice:1",
+        "containerDefinitions": [
+            {
+                "name": "accountableuserservice",
+                "image": "677602393757.dkr.ecr.eu-north-1.amazonaws.com/accountableuserservice:latest",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 8002,
+                        "hostPort": 8002,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [],
+                "mountPoints": [],
+                "volumesFrom": []
+            }
+        ],
+        "family": "accountableuserservice",
+        "executionRoleArn": "arn:aws:iam::677602393757:role/ecsTaskExecutionRole",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+                "name": "ecs.capability.execution-role-ecr-pull"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": ["EC2", "FARGATE"],
+        "requiresCompatibilities": ["FARGATE"],
+        "cpu": "256",
+        "memory": "512",
+        "registeredAt": "2023-06-12T19:50:22.039000+01:00",
+        "registeredBy": "arn:aws:iam::677602393757:user/perfection"
+    }
+}
