@@ -2,8 +2,10 @@ import env from './config/env';
 import { logan, logger } from './log/logger';
 import express, { Application } from 'express';
 import * as mongodb from './database/mongodb';
+import * as redis from './database/redis';
 import buildGraphQLServer from './graphql';
 import handleRouting from './routing';
+import * as indexes from './database/indexes';
 import cors from 'cors';
 
 export default async function startApplication(app: Application): Promise<void> {
@@ -15,6 +17,9 @@ export default async function startApplication(app: Application): Promise<void> 
     app.use(logan);
 
     await mongodb.openConnection();
+    await redis.createConnection();
+
+    indexes.createIndexes();
 
     const frame = await buildGraphQLServer(app);
 

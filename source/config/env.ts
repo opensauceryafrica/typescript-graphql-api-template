@@ -41,6 +41,13 @@ export default {
             password: os.DB_PASSWORD || 'password',
             uri: `mongodb+srv://${os.DB_USER}:${os.DB_PASSWORD}@${os.DB_HOST}/${os.DB_NAME}?retryWrites=true&authSource=admin`,
         },
+        redis: {
+            port: Number(os.REDIS_PORT) || 6379,
+            host: os.REDIS_HOST || 'xxxx',
+            username: os.REDIS_USERNAME || 'localhost',
+            password: os.REDIS_PASSWORD || 'password',
+            url: `redis://${os.REDIS_USERNAME}:${os.REDIS_PASSWORD}@${os.REDIS_HOST}:${Number(os.REDIS_PORT)}`,
+        },
     },
     kafka: {
         cluster: os.KAFKA_CLUSTER || 'localhost:9092',
