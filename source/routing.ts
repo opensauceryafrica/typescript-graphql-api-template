@@ -1,6 +1,6 @@
 import { Application, Request, Response, Router } from 'express';
 import * as logger from './log/logger';
-import v1 from '../source/route/v1/index';
+import v1 from './route/v1';
 
 export default function handleRouting(app: Application): void {
     // version 1
