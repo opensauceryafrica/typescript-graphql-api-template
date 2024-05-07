@@ -32,7 +32,7 @@ export default async (req: Request): Promise<IContext | GraphError> => {
         if (verified.status) {
             const account = await accountRepository.findById(verified.data['id'] as mongoose.ObjectId);
             if (!account) {
-                return response.sendErrorResponse('Login failed!', 403);
+                return response.sendErrorResponse('Login required!', 401);
             }
             return { user: account.toJSON(), ip, referer, domain };
         }
@@ -53,6 +53,7 @@ export const validateAccess = (
             status: false,
             message: 'Login required!',
             data: {},
+            code: 401,
         };
     }
 
@@ -64,6 +65,7 @@ export const validateAccess = (
                 status: false,
                 message: "You don't have the required role!",
                 data: {},
+                code: 403,
             };
         }
     }
@@ -96,6 +98,7 @@ export const validateAccess = (
                 status: false,
                 message: "You don't have sufficient permissions to perform this action!",
                 data: {},
+                code: 403,
             };
         }
     }
@@ -111,6 +114,7 @@ export const validateAccess = (
                     status: false,
                     message: requirement.error,
                     data: {},
+                    code: 403,
                 };
             }
         }
