@@ -4,6 +4,7 @@ export interface MakeResponse {
     status: number | boolean;
     message: string;
     data: Record<string, unknown>;
+    code?: number;
 }
 
 export interface IContext {

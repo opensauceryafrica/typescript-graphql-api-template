@@ -8,7 +8,7 @@ export async function user(payload: IUser): Promise<MakeResponse> {
     try {
         const user = await userRepository.findById(payload._id!);
         if (!user) {
-            return response.makeResponse(false, 'Login required!', {});
+            return response.makeResponse(false, 'Login required!', {}, 401);
         }
         return response.makeResponse(true, 'Profile retrieved.', user);
     } catch (error: any) {

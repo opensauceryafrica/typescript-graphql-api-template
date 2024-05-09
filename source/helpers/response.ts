@@ -5,11 +5,17 @@ import { logger } from '../log/logger';
 import { GraphError } from '../types/misc/graphql';
 import { Response } from 'express';
 
-export const makeResponse = (status: number | boolean, message: string, data: any): MakeResponse => {
+export const makeResponse = (
+    status: number | boolean,
+    message: string,
+    data: any,
+    code: number = 400,
+): MakeResponse => {
     return {
         status,
         message,
         data,
+        code,
     };
 };
 
