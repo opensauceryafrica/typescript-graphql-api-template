@@ -36,7 +36,7 @@ export default async (req: Request): Promise<IContext | GraphError> => {
             }
             return { user: account.toJSON(), ip, referer, domain };
         }
-        return response.sendErrorResponse(verified.message, 401);
+        return response.sendErrorResponse(verified.message, verified.code);
     }
     return { ip, referer, domain };
 };

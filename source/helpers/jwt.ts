@@ -23,7 +23,7 @@ export const signToken = (payload: Record<string, unknown>, expiry?: string): st
  */
 export const verifyToken = async (token: string): Promise<MakeResponse> => {
     if (!token) {
-        return makeResponse(false, 'Login required! Auth token missing.', {});
+        return makeResponse(false, 'Login required! Auth token missing.', {}, 401);
     }
     try {
         return makeResponse(
@@ -34,6 +34,6 @@ export const verifyToken = async (token: string): Promise<MakeResponse> => {
             }) as JwtPayload,
         );
     } catch (error) {
-        return makeResponse(false, 'Login required! Invalid auth token.', {});
+        return makeResponse(false, 'Login required! Invalid auth token.', {}, 401);
     }
 };
